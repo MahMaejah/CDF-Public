@@ -1,0 +1,88 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2022-11-10 21:32:20.552128",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "youth_groups",
+  "women_groups",
+  "community_clubs",
+  "cooperatives",
+  "businesses",
+  "companies",
+  "total"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "youth_groups",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Youth Groups",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "women_groups",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Women Groups",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "community_clubs",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Community Clubs",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "cooperatives",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Cooperatives",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "businesses",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Businesses",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "companies",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Companies",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "total",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Total",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-11-10 21:51:04.470781",
+ "modified_by": "Administrator",
+ "module": "Cdf Management",
+ "name": "Summary TB2",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,278 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:ward_name",
+ "creation": "2022-08-10 22:14:04.242507",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "ward_name",
+  "ward_number",
+  "name_of_ward_councilor",
+  "province",
+  "column_break_4",
+  "district",
+  "constituency",
+  "bursaries_section",
+  "secondary_school",
+  "secondary_school_total_amount_disbursed",
+  "skills_development",
+  "skills_development_total_amount_disbursed",
+  "community_projects_section",
+  "community_projects",
+  "community_projects_total_amount_disbursed",
+  "community_empowerment_section",
+  "grants",
+  "grants_total_amount_disbursed",
+  "loans",
+  "loans_total_amount_disbursed",
+  "group_summary_section",
+  "total_number_of_cooperative",
+  "total_number_of_women_groups",
+  "total_number_of_businesses",
+  "column_break_24",
+  "total_number_of_companies",
+  "total_number_of_youth_groups",
+  "total_number_of_community_clubs",
+  "project_summary_section",
+  "total_number_of_project_submitted",
+  "total_number_of_projects_approved",
+  "column_break_30",
+  "total_number_of_community_projects",
+  "summary_of_financial_report_section",
+  "total_amount_received",
+  "total_amount_disbursed",
+  "column_break_35",
+  "total_amount_unused"
+ ],
+ "fields": [
+  {
+   "fieldname": "ward_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Ward Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "ward_number",
+   "fieldtype": "Int",
+   "label": "Ward Number"
+  },
+  {
+   "fieldname": "name_of_ward_councilor",
+   "fieldtype": "Data",
+   "label": "Name of Ward Councilor"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "province",
+   "fieldtype": "Select",
+   "label": "Province",
+   "options": "\nCentral\nCoperbelt\nEastern\nLuapula\nLusaka\nMuchinga\nNorth Western\nNorthern\nSouthern\nWestern",
+   "reqd": 1
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Link",
+   "label": "District",
+   "options": "District",
+   "reqd": 1
+  },
+  {
+   "fieldname": "constituency",
+   "fieldtype": "Link",
+   "label": "Constituency",
+   "options": "Constituency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bursaries_section",
+   "fieldtype": "Section Break",
+   "label": "Bursaries"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "secondary_school",
+   "fieldtype": "Table",
+   "label": "Secondary School",
+   "options": "Secondary SchoolTB"
+  },
+  {
+   "default": "0",
+   "fieldname": "secondary_school_total_amount_disbursed",
+   "fieldtype": "Read Only",
+   "label": "Secondary school Total Amount Disbursed"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "skills_development",
+   "fieldtype": "Table",
+   "label": "Skills Development ",
+   "options": "Skills DevelopmentTB"
+  },
+  {
+   "fieldname": "community_projects_section",
+   "fieldtype": "Section Break",
+   "label": "Community Projects"
+  },
+  {
+   "fieldname": "community_projects_total_amount_disbursed",
+   "fieldtype": "Read Only",
+   "label": "Community Projects Total Amount Disbursed"
+  },
+  {
+   "fieldname": "community_empowerment_section",
+   "fieldtype": "Section Break",
+   "label": "Community Empowerment"
+  },
+  {
+   "fieldname": "grants",
+   "fieldtype": "Table",
+   "label": "Grants",
+   "options": "Community EmpowermentTB"
+  },
+  {
+   "fieldname": "grants_total_amount_disbursed",
+   "fieldtype": "Read Only",
+   "label": "Grants Total Amount Disbursed"
+  },
+  {
+   "fieldname": "loans",
+   "fieldtype": "Table",
+   "label": "Loans",
+   "options": "Community EmpowermentTB"
+  },
+  {
+   "fieldname": "loans_total_amount_disbursed",
+   "fieldtype": "Read Only",
+   "label": "Loans Total Amount Disbursed"
+  },
+  {
+   "fieldname": "group_summary_section",
+   "fieldtype": "Section Break",
+   "label": "Group Summary"
+  },
+  {
+   "fieldname": "total_number_of_cooperative",
+   "fieldtype": "Read Only",
+   "label": "Total Number of Cooperative"
+  },
+  {
+   "fieldname": "total_number_of_women_groups",
+   "fieldtype": "Read Only",
+   "label": "Total Number of Women Groups"
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_number_of_youth_groups",
+   "fieldtype": "Read Only",
+   "label": "Total Number of Youth Groups"
+  },
+  {
+   "fieldname": "total_number_of_community_clubs",
+   "fieldtype": "Read Only",
+   "label": "Total Number of Community Clubs"
+  },
+  {
+   "fieldname": "project_summary_section",
+   "fieldtype": "Section Break",
+   "label": "Project Summary"
+  },
+  {
+   "fieldname": "total_number_of_project_submitted",
+   "fieldtype": "Read Only",
+   "label": "Total Number of Project Submitted"
+  },
+  {
+   "fieldname": "total_number_of_projects_approved",
+   "fieldtype": "Read Only",
+   "label": "Total Number of Projects Approved"
+  },
+  {
+   "fieldname": "column_break_30",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_number_of_community_projects",
+   "fieldtype": "Read Only",
+   "label": "Total Number of Community Projects"
+  },
+  {
+   "fieldname": "summary_of_financial_report_section",
+   "fieldtype": "Section Break",
+   "label": "Summary of Financial Report"
+  },
+  {
+   "fieldname": "total_amount_received",
+   "fieldtype": "Read Only",
+   "label": "Total Amount Received"
+  },
+  {
+   "fieldname": "total_amount_disbursed",
+   "fieldtype": "Read Only",
+   "label": "Total Amount Disbursed"
+  },
+  {
+   "fieldname": "column_break_35",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount_unused",
+   "fieldtype": "Read Only",
+   "label": "Total Amount Unused"
+  },
+  {
+   "fieldname": "community_projects",
+   "fieldtype": "Table",
+   "options": "Community ProjectsTB"
+  },
+  {
+   "fieldname": "skills_development_total_amount_disbursed",
+   "fieldtype": "Read Only",
+   "label": "Skills Development Total Amount disbursed"
+  },
+  {
+   "fieldname": "total_number_of_businesses",
+   "fieldtype": "Read Only",
+   "label": "Total Number of Businesses"
+  },
+  {
+   "fieldname": "total_number_of_companies",
+   "fieldtype": "Read Only",
+   "label": "Total Number of Companies"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-12-06 13:04:08.686112",
+ "modified_by": "Administrator",
+ "module": "Cdf Management",
+ "name": "Ward",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-08-11 10:10:33.684890",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "group_type",
+  "group_name",
+  "projects",
+  "amount",
+  "response"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "group_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Group Type",
+   "options": "\nYouth Group\nWomen Group\nCommunity Club\nCooperative\nCompany\nBusiness"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "group_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Group Name"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "projects",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Project/s"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Amount"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "response",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Response",
+   "options": "Pending\nAccepted\nRejected",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-08-13 11:38:57.634892",
+ "modified_by": "Administrator",
+ "module": "Cdf Management",
+ "name": "Community EmpowermentTB",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

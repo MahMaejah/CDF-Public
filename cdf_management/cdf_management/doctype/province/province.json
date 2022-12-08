@@ -1,0 +1,126 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:name_of_province",
+ "creation": "2022-08-11 10:52:59.500802",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "name_of_province",
+  "provincial_minister",
+  "bursaries_secondary_school_beneficiaries_section",
+  "bursaries_secondary_school_beneficiaries",
+  "secondary_school_total_amount_disbursed",
+  "skills_development_beneficiaries_section",
+  "skills_development_beneficiaries",
+  "skills_development_total_amount_disbursed",
+  "loans_section",
+  "loans",
+  "loans_total_amount_disbursed",
+  "grants_section",
+  "grants",
+  "grants_total_amount_disbursed"
+ ],
+ "fields": [
+  {
+   "fieldname": "name_of_province",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name of Province",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "provincial_minister",
+   "fieldtype": "Data",
+   "label": "Provincial Minister",
+   "unique": 1
+  },
+  {
+   "fieldname": "bursaries_secondary_school_beneficiaries_section",
+   "fieldtype": "Section Break",
+   "label": "Bursaries Secondary School Beneficiaries"
+  },
+  {
+   "fieldname": "bursaries_secondary_school_beneficiaries",
+   "fieldtype": "Table",
+   "options": "Summary TB"
+  },
+  {
+   "fieldname": "secondary_school_total_amount_disbursed",
+   "fieldtype": "Data",
+   "label": "Secondary School Total Amount Disbursed"
+  },
+  {
+   "fieldname": "skills_development_beneficiaries_section",
+   "fieldtype": "Section Break",
+   "label": "Skills Development Beneficiaries"
+  },
+  {
+   "fieldname": "skills_development_beneficiaries",
+   "fieldtype": "Table",
+   "options": "Summary TB"
+  },
+  {
+   "fieldname": "skills_development_total_amount_disbursed",
+   "fieldtype": "Data",
+   "label": "Skills Development Total Amount Disbursed"
+  },
+  {
+   "fieldname": "loans_section",
+   "fieldtype": "Section Break",
+   "label": "Loans"
+  },
+  {
+   "fieldname": "loans",
+   "fieldtype": "Table",
+   "options": "Summary TB2"
+  },
+  {
+   "fieldname": "loans_total_amount_disbursed",
+   "fieldtype": "Data",
+   "label": "Loans Total Amount Disbursed"
+  },
+  {
+   "fieldname": "grants_section",
+   "fieldtype": "Section Break",
+   "label": "Grants"
+  },
+  {
+   "fieldname": "grants",
+   "fieldtype": "Table",
+   "options": "Summary TB2"
+  },
+  {
+   "fieldname": "grants_total_amount_disbursed",
+   "fieldtype": "Data",
+   "label": "Grants Total Amount Disbursed"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-11-14 04:23:19.288582",
+ "modified_by": "Administrator",
+ "module": "Cdf Management",
+ "name": "Province",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

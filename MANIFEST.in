@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include cdf_management *.css
+recursive-include cdf_management *.csv
+recursive-include cdf_management *.html
+recursive-include cdf_management *.ico
+recursive-include cdf_management *.js
+recursive-include cdf_management *.json
+recursive-include cdf_management *.md
+recursive-include cdf_management *.png
+recursive-include cdf_management *.py
+recursive-include cdf_management *.svg
+recursive-include cdf_management *.txt
+recursive-exclude cdf_management *.pyc
