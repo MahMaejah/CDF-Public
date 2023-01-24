@@ -58,7 +58,8 @@ app_license = "MIT"
 
 # before_install = "cdf_management.install.before_install"
 # after_install = "cdf_management.install.after_install"
-
+after_install = "cdf_management.install.after_install"
+# create_entry_template =
 # Uninstallation
 # ------------
 

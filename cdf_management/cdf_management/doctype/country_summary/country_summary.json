@@ -1,87 +1,82 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:district_name",
- "creation": "2022-08-11 10:49:44.684321",
+ "autoname": "prompt",
+ "creation": "2023-01-02 22:08:38.424720",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "district_name",
-  "mayorcouncil_chairperson",
-  "column_break_3",
-  "province",
   "bursaries_secondary_school_beneficiaries_section",
   "secondary_beneficiaries_male",
   "secondary_beneficiaries_total",
-  "column_break_8",
+  "column_break_5",
   "secondary_beneficiaries_female",
-  "section_break_10",
+  "section_break_7",
   "secondary_school_total_amount_disbursed",
   "skills_development_beneficiaries_section",
   "skills_development_beneficiaries_male",
   "skills_development_beneficiaries_total",
-  "column_break_14",
+  "column_break_13",
   "skills_development_beneficiaries_female",
-  "section_break_17",
+  "section_break_15",
   "skills_development_total_amount_disbursed",
   "community_development_projects_section",
   "community_development_total",
-  "section_break_21",
+  "section_break_19",
   "community_development_total_amount_disbursed",
   "grants_section",
   "grants_youth_groups",
   "grants_women_groups",
   "grants_community_clubs",
-  "column_break_23",
+  "column_break_25",
   "grants_cooperatives",
   "grants_businesses",
   "grants_companies",
-  "section_break_23",
+  "section_break_29",
   "grants_total_amount_disbursed",
   "loans_section",
   "loans_youth_groups",
   "loans_women_groups",
   "loans_community_clubs",
-  "column_break_32",
+  "column_break_35",
   "loans_cooperatives",
   "loans_businesses",
   "loans_companies",
-  "section_break_33",
+  "section_break_39",
   "loans_total_amount_disbursed",
-  "section_break_43",
+  "section_break_41",
   "grand_total"
  ],
  "fields": [
-  {
-   "fieldname": "district_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "District Name ",
-   "reqd": 1,
-   "unique": 1
-  },
-  {
-   "fieldname": "mayorcouncil_chairperson",
-   "fieldtype": "Data",
-   "label": "Mayor/Council Chairperson"
-  },
-  {
-   "fieldname": "column_break_3",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "province",
-   "fieldtype": "Select",
-   "label": "Province",
-   "options": "\nCentral\nCopperbelt\nEastern\nLuapula\nLusaka\nMuchinga\nNorth Western\nNorthern\nSouthern\nWestern",
-   "reqd": 1
-  },
   {
    "collapsible": 1,
    "fieldname": "bursaries_secondary_school_beneficiaries_section",
    "fieldtype": "Section Break",
    "label": "Bursaries Secondary School Beneficiaries"
+  },
+  {
+   "fieldname": "secondary_beneficiaries_male",
+   "fieldtype": "Int",
+   "label": "Male"
+  },
+  {
+   "fieldname": "secondary_beneficiaries_total",
+   "fieldtype": "Int",
+   "label": "Total"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "secondary_beneficiaries_female",
+   "fieldtype": "Int",
+   "label": "Female"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "secondary_school_total_amount_disbursed",
@@ -95,52 +90,6 @@
    "label": "Skills Development Beneficiaries"
   },
   {
-   "fieldname": "skills_development_total_amount_disbursed",
-   "fieldtype": "Read Only",
-   "label": "Skills Development Total Amount Disbursed"
-  },
-  {
-   "collapsible": 1,
-   "fieldname": "loans_section",
-   "fieldtype": "Section Break",
-   "label": "Loans"
-  },
-  {
-   "fieldname": "loans_total_amount_disbursed",
-   "fieldtype": "Read Only",
-   "label": "Loans Total Amount Disbursed"
-  },
-  {
-   "collapsible": 1,
-   "fieldname": "grants_section",
-   "fieldtype": "Section Break",
-   "label": "Grants"
-  },
-  {
-   "fieldname": "grants_total_amount_disbursed",
-   "fieldtype": "Read Only",
-   "label": "Grants Total Amount Disbursed"
-  },
-  {
-   "fieldname": "secondary_beneficiaries_male",
-   "fieldtype": "Int",
-   "label": "Male"
-  },
-  {
-   "fieldname": "secondary_beneficiaries_total",
-   "fieldtype": "Int",
-   "label": "Total"
-  },
-  {
-   "fieldname": "column_break_8",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "secondary_beneficiaries_female",
-   "fieldtype": "Int",
-   "label": "Female"
-  },
-  {
    "fieldname": "skills_development_beneficiaries_male",
    "fieldtype": "Int",
    "label": "Male"
@@ -151,7 +100,7 @@
    "label": "Total"
   },
   {
-   "fieldname": "column_break_14",
+   "fieldname": "column_break_13",
    "fieldtype": "Column Break"
   },
   {
@@ -160,8 +109,39 @@
    "label": "Female"
   },
   {
-   "fieldname": "section_break_17",
+   "fieldname": "section_break_15",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "skills_development_total_amount_disbursed",
+   "fieldtype": "Read Only",
+   "label": "Skills Development Total Amount Disbursed"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "community_development_projects_section",
+   "fieldtype": "Section Break",
+   "label": "Community Development Projects"
+  },
+  {
+   "fieldname": "community_development_total",
+   "fieldtype": "Int",
+   "label": "Total"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "community_development_total_amount_disbursed",
+   "fieldtype": "Read Only",
+   "label": "Community Development Total Amount Disbursed"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "grants_section",
+   "fieldtype": "Section Break",
+   "label": "Grants"
   },
   {
    "fieldname": "grants_youth_groups",
@@ -179,7 +159,7 @@
    "label": "Grants Community Clubs"
   },
   {
-   "fieldname": "column_break_23",
+   "fieldname": "column_break_25",
    "fieldtype": "Column Break"
   },
   {
@@ -198,9 +178,29 @@
    "label": "Grants Companies"
   },
   {
+   "fieldname": "section_break_29",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "grants_total_amount_disbursed",
+   "fieldtype": "Read Only",
+   "label": "Grants Total Amount Disbursed"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "loans_section",
+   "fieldtype": "Section Break",
+   "label": "Loans"
+  },
+  {
    "fieldname": "loans_youth_groups",
    "fieldtype": "Int",
    "label": "Loans Youth Groups"
+  },
+  {
+   "fieldname": "loans_women_groups",
+   "fieldtype": "Int",
+   "label": "Loans Women Groups"
   },
   {
    "fieldname": "loans_community_clubs",
@@ -208,7 +208,7 @@
    "label": "Loans Community Clubs"
   },
   {
-   "fieldname": "column_break_32",
+   "fieldname": "column_break_35",
    "fieldtype": "Column Break"
   },
   {
@@ -227,59 +227,32 @@
    "label": "Loans Companies"
   },
   {
-   "fieldname": "loans_women_groups",
-   "fieldtype": "Int",
-   "label": "Loans Women Groups"
-  },
-  {
-   "fieldname": "section_break_10",
+   "fieldname": "section_break_39",
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "section_break_23",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "section_break_33",
-   "fieldtype": "Section Break"
-  },
-  {
-   "collapsible": 1,
-   "fieldname": "community_development_projects_section",
-   "fieldtype": "Section Break",
-   "label": "Community Development Projects"
-  },
-  {
-   "fieldname": "community_development_total",
-   "fieldtype": "Int",
-   "label": "Total"
-  },
-  {
-   "fieldname": "section_break_21",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "community_development_total_amount_disbursed",
+   "fieldname": "loans_total_amount_disbursed",
    "fieldtype": "Read Only",
-   "label": "Community Development Total Amount Disbursed"
+   "label": "Loans Total Amount Disbursed"
   },
   {
-   "fieldname": "section_break_43",
+   "fieldname": "section_break_41",
    "fieldtype": "Section Break"
   },
   {
    "fieldname": "grand_total",
    "fieldtype": "Read Only",
-   "label": "District Grand Total Disbursed"
+   "label": "Country Grand Total Disbursed"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-01-04 01:07:53.114805",
+ "modified": "2023-01-04 01:05:15.634548",
  "modified_by": "Administrator",
  "module": "Cdf Management",
- "name": "District",
- "naming_rule": "By fieldname",
+ "name": "Country Summary",
+ "name_case": "Title Case",
+ "naming_rule": "Set by user",
  "owner": "Administrator",
  "permissions": [
   {

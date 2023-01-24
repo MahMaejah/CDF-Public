@@ -1,0 +1,49 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-01-05 19:57:47.339461",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "total_amount_allocated_for_community_development_country_wide",
+  "total_amount_allocated_per_constituency"
+ ],
+ "fields": [
+  {
+   "fieldname": "total_amount_allocated_for_community_development_country_wide",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total amount allocated for Community Development country wide",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_amount_allocated_per_constituency",
+   "fieldtype": "Read Only",
+   "label": "Total amount allocated per constituency"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-01-05 19:57:47.339461",
+ "modified_by": "Administrator",
+ "module": "Cdf Management",
+ "name": "Allocation Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

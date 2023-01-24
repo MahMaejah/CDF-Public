@@ -14,6 +14,7 @@
   "column_break_4",
   "district",
   "constituency",
+  "year",
   "bursaries_section",
   "secondary_school",
   "secondary_school_total_amount_disbursed",
@@ -31,6 +32,10 @@
   "total_number_of_cooperative",
   "total_number_of_women_groups",
   "total_number_of_businesses",
+  "total_male_bursaries_benficiaries",
+  "total_female_bursaries_benficiaries",
+  "total_male_skill_benficiaries",
+  "total_female_skill_benficiaries",
   "column_break_24",
   "total_number_of_companies",
   "total_number_of_youth_groups",
@@ -41,10 +46,8 @@
   "column_break_30",
   "total_number_of_community_projects",
   "summary_of_financial_report_section",
-  "total_amount_received",
   "total_amount_disbursed",
-  "column_break_35",
-  "total_amount_unused"
+  "column_break_35"
  ],
  "fields": [
   {
@@ -72,13 +75,19 @@
   {
    "fieldname": "province",
    "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Province",
-   "options": "\nCentral\nCoperbelt\nEastern\nLuapula\nLusaka\nMuchinga\nNorth Western\nNorthern\nSouthern\nWestern",
+   "options": "\nCentral\nCopperbelt\nEastern\nLuapula\nLusaka\nMuchinga\nNorth Western\nNorthern\nSouthern\nWestern",
    "reqd": 1
   },
   {
    "fieldname": "district",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "District",
    "options": "District",
    "reqd": 1
@@ -86,6 +95,9 @@
   {
    "fieldname": "constituency",
    "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
    "label": "Constituency",
    "options": "Constituency",
    "reqd": 1
@@ -103,7 +115,7 @@
    "options": "Secondary SchoolTB"
   },
   {
-   "default": "0",
+   "default": "ZMW 0",
    "fieldname": "secondary_school_total_amount_disbursed",
    "fieldtype": "Read Only",
    "label": "Secondary school Total Amount Disbursed"
@@ -121,6 +133,7 @@
    "label": "Community Projects"
   },
   {
+   "default": "ZMW 0",
    "fieldname": "community_projects_total_amount_disbursed",
    "fieldtype": "Read Only",
    "label": "Community Projects Total Amount Disbursed"
@@ -137,6 +150,7 @@
    "options": "Community EmpowermentTB"
   },
   {
+   "default": "ZMW 0",
    "fieldname": "grants_total_amount_disbursed",
    "fieldtype": "Read Only",
    "label": "Grants Total Amount Disbursed"
@@ -148,6 +162,7 @@
    "options": "Community EmpowermentTB"
   },
   {
+   "default": "ZMW 0",
    "fieldname": "loans_total_amount_disbursed",
    "fieldtype": "Read Only",
    "label": "Loans Total Amount Disbursed"
@@ -211,11 +226,7 @@
    "label": "Summary of Financial Report"
   },
   {
-   "fieldname": "total_amount_received",
-   "fieldtype": "Read Only",
-   "label": "Total Amount Received"
-  },
-  {
+   "default": "ZMW 0",
    "fieldname": "total_amount_disbursed",
    "fieldtype": "Read Only",
    "label": "Total Amount Disbursed"
@@ -225,16 +236,13 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "total_amount_unused",
-   "fieldtype": "Read Only",
-   "label": "Total Amount Unused"
-  },
-  {
    "fieldname": "community_projects",
    "fieldtype": "Table",
+   "label": "Projects",
    "options": "Community ProjectsTB"
   },
   {
+   "default": "ZMW 0.00",
    "fieldname": "skills_development_total_amount_disbursed",
    "fieldtype": "Read Only",
    "label": "Skills Development Total Amount disbursed"
@@ -248,11 +256,36 @@
    "fieldname": "total_number_of_companies",
    "fieldtype": "Read Only",
    "label": "Total Number of Companies"
+  },
+  {
+   "fieldname": "total_male_bursaries_benficiaries",
+   "fieldtype": "Read Only",
+   "label": "Total Male Bursaries Benficiaries"
+  },
+  {
+   "fieldname": "total_female_bursaries_benficiaries",
+   "fieldtype": "Read Only",
+   "label": "Total Female Bursaries Benficiaries"
+  },
+  {
+   "fieldname": "total_male_skill_benficiaries",
+   "fieldtype": "Read Only",
+   "label": "Total Male Skill Benficiaries"
+  },
+  {
+   "fieldname": "total_female_skill_benficiaries",
+   "fieldtype": "Read Only",
+   "label": "Total Female Skill Benficiaries"
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Data",
+   "label": "Year"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-12-06 13:04:08.686112",
+ "modified": "2023-01-19 21:51:05.046070",
  "modified_by": "Administrator",
  "module": "Cdf Management",
  "name": "Ward",

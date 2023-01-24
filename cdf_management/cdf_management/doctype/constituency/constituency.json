@@ -13,26 +13,52 @@
   "column_break_4",
   "name_of_member_of_parliament",
   "province",
+  "constituency_entries_section",
+  "constituency_entries",
+  "clean_total",
+  "constituency_entries_total",
   "bursaries_secondary_school_beneficiaries_section",
   "secondary_beneficiaries_male",
   "secondary_beneficiaries_total",
   "column_break_10",
   "secondary_beneficiaries_female",
+  "section_break_12",
   "secondary_school_total_amount_disbursed",
-  "bursaries_secondary_school_beneficiaries",
   "skills_development_beneficiaries_section",
   "skills_development_beneficiaries_male",
   "skills_development_beneficiaries_total",
   "column_break_17",
   "skills_development_beneficiaries_female",
+  "section_break_19",
   "skills_development_total_amount_disbursed",
-  "skills_development_beneficiaries",
-  "loans_section",
-  "loans",
-  "loans_total_amount_disbursed",
+  "community_development_projects_section",
+  "community_development_total",
+  "section_break_23",
+  "community_development_total_amount_disbursed",
   "grants_section",
-  "grants",
-  "grants_total_amount_disbursed"
+  "grants_youth_groups",
+  "grants_women_groups",
+  "grants_community_clubs",
+  "column_break_23",
+  "grants_cooperatives",
+  "grants_businesses",
+  "grants_companies",
+  "section_break_33",
+  "grants_total_amount_disbursed",
+  "loans_section",
+  "loans_youth_groups",
+  "loans_women_groups",
+  "loans_community_clubs",
+  "column_break_35",
+  "loans_cooperatives",
+  "loans_businesses",
+  "loans_companies",
+  "section_break_39",
+  "loans_total_amount_disbursed",
+  "section_break_45",
+  "grand_total",
+  "constituency_total_amount_allocated",
+  "constituency_total_amount_unused"
  ],
  "fields": [
   {
@@ -69,25 +95,29 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Province",
-   "options": "\nCentral\nCoperbelt\nEastern\nLuapula\nLusaka\nMuchinga\nNorth Western\nNorthern\nSouthern\nWestern",
+   "options": "\nCentral\nCopperbelt\nEastern\nLuapula\nLusaka\nMuchinga\nNorth Western\nNorthern\nSouthern\nWestern",
    "reqd": 1
   },
   {
+   "collapsible": 1,
    "fieldname": "bursaries_secondary_school_beneficiaries_section",
    "fieldtype": "Section Break",
    "label": "Bursaries Secondary School Beneficiaries"
   },
   {
+   "collapsible": 1,
    "fieldname": "skills_development_beneficiaries_section",
    "fieldtype": "Section Break",
    "label": "Skills Development Beneficiaries"
   },
   {
+   "collapsible": 1,
    "fieldname": "loans_section",
    "fieldtype": "Section Break",
    "label": "Loans"
   },
   {
+   "collapsible": 1,
    "fieldname": "grants_section",
    "fieldtype": "Section Break",
    "label": "Grants"
@@ -112,30 +142,6 @@
    "fieldname": "grants_total_amount_disbursed",
    "fieldtype": "Read Only",
    "label": "Grants Total Amount Disbursed"
-  },
-  {
-   "fieldname": "bursaries_secondary_school_beneficiaries",
-   "fieldtype": "Table",
-   "options": "Summary TB",
-   "read_only": 1
-  },
-  {
-   "fieldname": "skills_development_beneficiaries",
-   "fieldtype": "Table",
-   "options": "Summary TB",
-   "read_only": 1
-  },
-  {
-   "fieldname": "loans",
-   "fieldtype": "Table",
-   "options": "Summary TB2",
-   "read_only": 1
-  },
-  {
-   "fieldname": "grants",
-   "fieldtype": "Table",
-   "options": "Summary TB2",
-   "read_only": 1
   },
   {
    "default": "0",
@@ -186,11 +192,167 @@
   {
    "fieldname": "column_break_17",
    "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "grants_youth_groups",
+   "fieldtype": "Int",
+   "label": "Grants Youth Groups",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "grants_community_clubs",
+   "fieldtype": "Int",
+   "label": "Grants Community Clubs",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "grants_women_groups",
+   "fieldtype": "Int",
+   "label": "Grants Women Groups",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "grants_cooperatives",
+   "fieldtype": "Int",
+   "label": "Grants Cooperatives",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "grants_businesses",
+   "fieldtype": "Int",
+   "label": "Grants Businesses",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "grants_companies",
+   "fieldtype": "Int",
+   "label": "Grants Companies",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "loans_youth_groups",
+   "fieldtype": "Int",
+   "label": "Loans Youth Groups"
+  },
+  {
+   "fieldname": "loans_community_clubs",
+   "fieldtype": "Int",
+   "label": "Loans Community Clubs"
+  },
+  {
+   "fieldname": "column_break_35",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "loans_cooperatives",
+   "fieldtype": "Int",
+   "label": "Loans Cooperatives"
+  },
+  {
+   "fieldname": "loans_businesses",
+   "fieldtype": "Int",
+   "label": "Loans Businesses"
+  },
+  {
+   "fieldname": "loans_companies",
+   "fieldtype": "Int",
+   "label": "Loans Companies"
+  },
+  {
+   "fieldname": "loans_women_groups",
+   "fieldtype": "Int",
+   "label": "Loans Womens Group"
+  },
+  {
+   "fieldname": "section_break_33",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_39",
+   "fieldtype": "Section Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "community_development_projects_section",
+   "fieldtype": "Section Break",
+   "label": "Community Development Projects"
+  },
+  {
+   "fieldname": "community_development_total",
+   "fieldtype": "Int",
+   "label": "Total"
+  },
+  {
+   "fieldname": "section_break_23",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "community_development_total_amount_disbursed",
+   "fieldtype": "Read Only",
+   "label": "Community Development Total Amount Disbursed"
+  },
+  {
+   "fieldname": "section_break_45",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Read Only",
+   "label": "Constituency Grand Total Amount Disbursed"
+  },
+  {
+   "fieldname": "constituency_total_amount_allocated",
+   "fieldtype": "Read Only",
+   "label": "Constituency Total Amount Allocated"
+  },
+  {
+   "fieldname": "constituency_total_amount_unused",
+   "fieldtype": "Read Only",
+   "label": "Constituency Total Amount Unused"
+  },
+  {
+   "fieldname": "constituency_entries_section",
+   "fieldtype": "Section Break",
+   "label": "Constituency Entries"
+  },
+  {
+   "fieldname": "constituency_entries",
+   "fieldtype": "Table",
+   "options": "ConstituencyTB"
+  },
+  {
+   "fieldname": "constituency_entries_total",
+   "fieldtype": "Read Only",
+   "label": "Total"
+  },
+  {
+   "fieldname": "clean_total",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Total"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-12-08 13:06:03.659399",
+ "modified": "2023-01-15 16:20:12.857335",
  "modified_by": "Administrator",
  "module": "Cdf Management",
  "name": "Constituency",

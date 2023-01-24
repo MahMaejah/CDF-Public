@@ -9,8 +9,9 @@
   "group_type",
   "group_name",
   "projects",
+  "response",
   "amount",
-  "response"
+  "contact_number"
  ],
  "fields": [
   {
@@ -55,17 +56,23 @@
    "label": "Response",
    "options": "Pending\nAccepted\nRejected",
    "reqd": 1
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2022-08-13 11:38:57.634892",
+ "modified": "2023-01-21 11:42:40.930484",
  "modified_by": "Administrator",
  "module": "Cdf Management",
  "name": "Community EmpowermentTB",
  "owner": "Administrator",
  "permissions": [],
  "sort_field": "modified",
- "sort_order": "DESC"
+ "sort_order": "DESC",
+ "states": []
 }
