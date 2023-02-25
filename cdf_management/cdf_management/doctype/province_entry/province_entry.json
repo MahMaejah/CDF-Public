@@ -1,20 +1,18 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:district_name",
- "creation": "2022-08-11 10:49:44.684321",
+ "autoname": "field:name_of_province",
+ "creation": "2023-02-08 15:03:27.018018",
+ "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "district_name",
-  "mayorcouncil_chairperson",
-  "column_break_3",
-  "province",
-  "bursaries_secondary_school_beneficiaries_section",
+  "name_of_province",
+  "provincial_minister",
+  "bursaries_section",
   "secondary_school",
   "secondary_school_total_amount_disbursed",
-  "skills_development_beneficiaries_section",
   "skills_development",
   "skills_development_total_amount_disbursed",
   "community_projects_section",
@@ -25,99 +23,38 @@
   "grants_total_amount_disbursed",
   "loans",
   "loans_total_amount_disbursed",
-  "section_break_23",
-  "total_male_bursaries_benficiaries",
-  "total_female_bursaries_benficiaries",
-  "column_break_azzej",
-  "total_male_skill_benficiaries",
-  "total_female_skill_benficiaries",
   "group_summary_section",
   "total_number_of_cooperative",
   "total_number_of_women_groups",
   "total_number_of_businesses",
-  "column_break_23",
+  "column_break_lhoha",
   "total_number_of_companies",
   "total_number_of_youth_groups",
   "total_number_of_community_clubs",
+  "bursaries_summary_section",
+  "total_male_bursaries_benficiaries",
+  "total_female_bursaries_benficiaries",
+  "column_break_24",
+  "total_male_skill_benficiaries",
+  "total_female_skill_benficiaries",
   "project_summary_section",
-  "total_number_of_community_projects",
-  "total_number_of_projects_submitted",
-  "column_break_32",
+  "total_number_of_project_submitted",
   "total_number_of_projects_approved",
+  "column_break_30",
+  "total_number_of_community_projects",
   "summary_of_financial_report_section",
   "total_amount_disbursed",
-  "column_break_hbnvd",
+  "column_break_35",
   "assignment"
  ],
  "fields": [
   {
-   "fieldname": "district_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "District Name ",
-   "reqd": 1,
-   "unique": 1
-  },
-  {
-   "fieldname": "mayorcouncil_chairperson",
-   "fieldtype": "Data",
-   "label": "Mayor/Council Chairperson"
-  },
-  {
-   "fieldname": "column_break_3",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "province",
-   "fieldtype": "Select",
-   "label": "Province",
-   "options": "\nCentral\nCopperbelt\nEastern\nLuapula\nLusaka\nMuchinga\nNorth Western\nNorthern\nSouthern\nWestern",
-   "reqd": 1
-  },
-  {
-   "fieldname": "bursaries_secondary_school_beneficiaries_section",
+   "fieldname": "bursaries_section",
    "fieldtype": "Section Break",
-   "label": "Bursaries Secondary School Beneficiaries"
+   "label": "Bursaries"
   },
   {
-   "fieldname": "secondary_school_total_amount_disbursed",
-   "fieldtype": "Read Only",
-   "label": "Secondary School Total Amount Disbursed"
-  },
-  {
-   "fieldname": "skills_development_beneficiaries_section",
-   "fieldtype": "Section Break",
-   "label": "Skills Development Beneficiaries"
-  },
-  {
-   "fieldname": "skills_development_total_amount_disbursed",
-   "fieldtype": "Read Only",
-   "label": "Skills Development Total Amount Disbursed"
-  },
-  {
-   "fieldname": "loans_total_amount_disbursed",
-   "fieldtype": "Read Only",
-   "label": "Loans Total Amount Disbursed"
-  },
-  {
-   "fieldname": "grants_total_amount_disbursed",
-   "fieldtype": "Read Only",
-   "label": "Grants Total Amount Disbursed"
-  },
-  {
-   "fieldname": "column_break_23",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_32",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_23",
-   "fieldtype": "Section Break",
-   "label": " Bursaries Summary"
-  },
-  {
+   "allow_in_quick_entry": 1,
    "fieldname": "secondary_school",
    "fieldtype": "Table",
    "label": "Secondary School",
@@ -125,6 +62,13 @@
    "read_only": 1
   },
   {
+   "default": "ZMW 0",
+   "fieldname": "secondary_school_total_amount_disbursed",
+   "fieldtype": "Read Only",
+   "label": "Secondary school Total Amount Disbursed"
+  },
+  {
+   "allow_in_quick_entry": 1,
    "fieldname": "skills_development",
    "fieldtype": "Table",
    "label": "Skills Development ",
@@ -132,9 +76,15 @@
    "read_only": 1
   },
   {
+   "default": "ZMW 0.00",
+   "fieldname": "skills_development_total_amount_disbursed",
+   "fieldtype": "Read Only",
+   "label": "Skills Development Total Amount disbursed"
+  },
+  {
    "fieldname": "community_projects_section",
    "fieldtype": "Section Break",
-   "label": " Community Projects"
+   "label": "Community Projects"
   },
   {
    "fieldname": "community_projects",
@@ -144,12 +94,12 @@
    "read_only": 1
   },
   {
+   "default": "ZMW 0",
    "fieldname": "community_projects_total_amount_disbursed",
    "fieldtype": "Read Only",
    "label": "Community Projects Total Amount Disbursed"
   },
   {
-   "collapsible": 1,
    "fieldname": "community_empowerment_section",
    "fieldtype": "Section Break",
    "label": "Community Empowerment"
@@ -162,6 +112,12 @@
    "read_only": 1
   },
   {
+   "default": "ZMW 0",
+   "fieldname": "grants_total_amount_disbursed",
+   "fieldtype": "Read Only",
+   "label": "Grants Total Amount Disbursed"
+  },
+  {
    "fieldname": "loans",
    "fieldtype": "Table",
    "label": "Loans",
@@ -169,28 +125,10 @@
    "read_only": 1
   },
   {
-   "fieldname": "total_male_bursaries_benficiaries",
+   "default": "ZMW 0",
+   "fieldname": "loans_total_amount_disbursed",
    "fieldtype": "Read Only",
-   "label": "Total Male Bursaries Benficiaries"
-  },
-  {
-   "fieldname": "total_female_bursaries_benficiaries",
-   "fieldtype": "Read Only",
-   "label": "Total Female Bursaries Benficiaries"
-  },
-  {
-   "fieldname": "column_break_azzej",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "total_male_skill_benficiaries",
-   "fieldtype": "Read Only",
-   "label": "Total Male Skill Benficiaries"
-  },
-  {
-   "fieldname": "total_female_skill_benficiaries",
-   "fieldtype": "Read Only",
-   "label": "Total Female Skill Benficiaries"
+   "label": "Loans Total Amount Disbursed"
   },
   {
    "fieldname": "group_summary_section",
@@ -213,6 +151,30 @@
    "label": "Total Number of Businesses"
   },
   {
+   "fieldname": "total_male_bursaries_benficiaries",
+   "fieldtype": "Read Only",
+   "label": "Total Male Bursaries Benficiaries"
+  },
+  {
+   "fieldname": "total_female_bursaries_benficiaries",
+   "fieldtype": "Read Only",
+   "label": "Total Female Bursaries Benficiaries"
+  },
+  {
+   "fieldname": "total_male_skill_benficiaries",
+   "fieldtype": "Read Only",
+   "label": "Total Male Skill Benficiaries"
+  },
+  {
+   "fieldname": "total_female_skill_benficiaries",
+   "fieldtype": "Read Only",
+   "label": "Total Female Skill Benficiaries"
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  },
+  {
    "fieldname": "total_number_of_companies",
    "fieldtype": "Read Only",
    "label": "Total Number of Companies"
@@ -228,18 +190,12 @@
    "label": "Total Number of Community Clubs"
   },
   {
-   "collapsible": 1,
    "fieldname": "project_summary_section",
    "fieldtype": "Section Break",
    "label": "Project Summary"
   },
   {
-   "fieldname": "total_number_of_community_projects",
-   "fieldtype": "Read Only",
-   "label": "Total Number of Community Projects"
-  },
-  {
-   "fieldname": "total_number_of_projects_submitted",
+   "fieldname": "total_number_of_project_submitted",
    "fieldtype": "Read Only",
    "label": "Total Number of Project Submitted"
   },
@@ -249,32 +205,65 @@
    "label": "Total Number of Projects Approved"
   },
   {
+   "fieldname": "column_break_30",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_number_of_community_projects",
+   "fieldtype": "Read Only",
+   "label": "Total Number of Community Projects"
+  },
+  {
    "fieldname": "summary_of_financial_report_section",
    "fieldtype": "Section Break",
    "label": "Summary of Financial Report"
   },
   {
+   "default": "ZMW 0",
    "fieldname": "total_amount_disbursed",
    "fieldtype": "Read Only",
    "label": "Total Amount Disbursed"
   },
   {
-   "fieldname": "column_break_hbnvd",
+   "fieldname": "column_break_35",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "name_of_province",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name of Province",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "provincial_minister",
+   "fieldtype": "Data",
+   "label": "Provincial Minister"
   },
   {
    "fieldname": "assignment",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Assignment",
    "options": "Assignment"
+  },
+  {
+   "fieldname": "column_break_lhoha",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bursaries_summary_section",
+   "fieldtype": "Section Break",
+   "label": "Bursaries Summary"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-02-25 19:46:32.641227",
+ "modified": "2023-02-25 19:49:37.417008",
  "modified_by": "Administrator",
  "module": "Cdf Management",
- "name": "District",
+ "name": "Province Entry",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

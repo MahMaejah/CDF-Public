@@ -28,23 +28,25 @@
   "grants_total_amount_disbursed",
   "loans",
   "loans_total_amount_disbursed",
+  "bursaries_summary_section",
+  "total_male_bursaries_benficiaries",
+  "total_female_bursaries_benficiaries",
+  "column_break_6yvij",
+  "total_male_skill_benficiaries",
+  "total_female_skill_benficiaries",
   "group_summary_section",
   "total_number_of_cooperative",
   "total_number_of_women_groups",
   "total_number_of_businesses",
-  "total_male_bursaries_benficiaries",
-  "total_female_bursaries_benficiaries",
-  "total_male_skill_benficiaries",
-  "total_female_skill_benficiaries",
   "column_break_24",
   "total_number_of_companies",
   "total_number_of_youth_groups",
   "total_number_of_community_clubs",
   "project_summary_section",
-  "total_number_of_project_submitted",
-  "total_number_of_projects_approved",
-  "column_break_30",
   "total_number_of_community_projects",
+  "total_number_of_project_submitted",
+  "column_break_30",
+  "total_number_of_projects_approved",
   "summary_of_financial_report_section",
   "total_amount_disbursed",
   "column_break_35"
@@ -74,12 +76,12 @@
   },
   {
    "fieldname": "province",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Province",
-   "options": "\nCentral\nCopperbelt\nEastern\nLuapula\nLusaka\nMuchinga\nNorth Western\nNorthern\nSouthern\nWestern",
+   "options": "Province Entry",
    "reqd": 1
   },
   {
@@ -99,7 +101,7 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Constituency",
-   "options": "Constituency",
+   "options": "Constituency Entry",
    "reqd": 1
   },
   {
@@ -108,11 +110,11 @@
    "label": "Bursaries"
   },
   {
-   "allow_in_quick_entry": 1,
    "fieldname": "secondary_school",
    "fieldtype": "Table",
    "label": "Secondary School",
-   "options": "Secondary SchoolTB"
+   "options": "Secondary SchoolTB",
+   "read_only": 1
   },
   {
    "default": "ZMW 0",
@@ -121,11 +123,11 @@
    "label": "Secondary school Total Amount Disbursed"
   },
   {
-   "allow_in_quick_entry": 1,
    "fieldname": "skills_development",
    "fieldtype": "Table",
    "label": "Skills Development ",
-   "options": "Skills DevelopmentTB"
+   "options": "Skills DevelopmentTB",
+   "read_only": 1
   },
   {
    "fieldname": "community_projects_section",
@@ -147,7 +149,8 @@
    "fieldname": "grants",
    "fieldtype": "Table",
    "label": "Grants",
-   "options": "Community EmpowermentTB"
+   "options": "Community EmpowermentTB",
+   "read_only": 1
   },
   {
    "default": "ZMW 0",
@@ -159,7 +162,8 @@
    "fieldname": "loans",
    "fieldtype": "Table",
    "label": "Loans",
-   "options": "Community EmpowermentTB"
+   "options": "Community EmpowermentTB",
+   "read_only": 1
   },
   {
    "default": "ZMW 0",
@@ -239,7 +243,8 @@
    "fieldname": "community_projects",
    "fieldtype": "Table",
    "label": "Projects",
-   "options": "Community ProjectsTB"
+   "options": "Community ProjectsTB",
+   "read_only": 1
   },
   {
    "default": "ZMW 0.00",
@@ -281,11 +286,20 @@
    "fieldname": "year",
    "fieldtype": "Data",
    "label": "Year"
+  },
+  {
+   "fieldname": "bursaries_summary_section",
+   "fieldtype": "Section Break",
+   "label": "Bursaries Summary"
+  },
+  {
+   "fieldname": "column_break_6yvij",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-01-19 21:51:05.046070",
+ "modified": "2023-02-25 21:47:38.680679",
  "modified_by": "Administrator",
  "module": "Cdf Management",
  "name": "Ward",
@@ -301,6 +315,18 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CDF Data Clerk",
    "share": 1,
    "write": 1
   }

@@ -1,0 +1,286 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "{type}.-.application-.####.-.{year}",
+ "creation": "2023-02-08 09:11:38.109740",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "type",
+  "ward",
+  "ward_name",
+  "constituency",
+  "column_break_irbzm",
+  "district",
+  "province",
+  "year",
+  "section_break_aledz",
+  "name_of_beneficiary",
+  "name_of_contractor",
+  "group_name",
+  "group_type",
+  "name_of_project",
+  "training_institution",
+  "projects",
+  "school",
+  "grade",
+  "column_break_pfi7b",
+  "sex",
+  "age",
+  "contact_number",
+  "location",
+  "amount",
+  "tabletype",
+  "response",
+  "level",
+  "amended_from",
+  "assignment"
+ ],
+ "fields": [
+  {
+   "default": "0.00",
+   "fieldname": "amount",
+   "fieldtype": "Float",
+   "label": "Amount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "level",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Level",
+   "options": "Ward\nConstituency\nDistrict\nProvince"
+  },
+  {
+   "depends_on": "eval: doc.type == \"Secondary School Bursaries\" || doc.type == \"Skill Development Bursaries\"\r\n",
+   "fieldname": "name_of_beneficiary",
+   "fieldtype": "Data",
+   "label": "Name of Beneficiary"
+  },
+  {
+   "depends_on": "eval:doc.type == \"Secondary School Bursaries\" ",
+   "fieldname": "school",
+   "fieldtype": "Data",
+   "label": "School"
+  },
+  {
+   "depends_on": "eval:doc.type == \"Secondary School Bursaries\" ",
+   "fieldname": "grade",
+   "fieldtype": "Data",
+   "label": "Grade"
+  },
+  {
+   "depends_on": "eval: doc.type == \"Secondary School Bursaries\" || doc.type == \"Skill Development Bursaries\"",
+   "fieldname": "sex",
+   "fieldtype": "Link",
+   "label": "Sex",
+   "options": "Gender"
+  },
+  {
+   "depends_on": "eval: doc.type == \"Skill Development Bursaries\"",
+   "fieldname": "age",
+   "fieldtype": "Data",
+   "label": "Age"
+  },
+  {
+   "depends_on": "eval: doc.type == \"Skill Development Bursaries\"\r\n",
+   "fieldname": "training_institution",
+   "fieldtype": "Data",
+   "label": "Training Institution"
+  },
+  {
+   "depends_on": "eval: doc.type == \"Community Project\"\n",
+   "fieldname": "name_of_project",
+   "fieldtype": "Data",
+   "label": "Name of Project"
+  },
+  {
+   "depends_on": "eval: doc.type == \"Community Project\"\n",
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "depends_on": "eval: doc.type == \"Community Project\"\n",
+   "fieldname": "name_of_contractor",
+   "fieldtype": "Data",
+   "label": "Name of Contractor"
+  },
+  {
+   "depends_on": "eval: doc.type == \"Skills Development Bursaries\" || doc.type == \"Community Project\" || doc.type == \"Community Loan\" || doc.type == \"Community Grant\"\n",
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "depends_on": "eval: doc.type == \"Community Grants\" || doc.type == \"Community Loans\"\r\n",
+   "fieldname": "group_type",
+   "fieldtype": "Select",
+   "label": "Group Type",
+   "options": "Youth Group\nCooperative\nWomen Group\nCommunity Club\nBusiness\nCompany"
+  },
+  {
+   "depends_on": "eval: doc.type == \"Community Grants\" || doc.type == \"Community Loans\"\r\n",
+   "fieldname": "group_name",
+   "fieldtype": "Data",
+   "label": "Group Name"
+  },
+  {
+   "depends_on": "eval: doc.type == \"Community Grants\" || doc.type == \"Community Loans\"\r\n\r\n",
+   "fieldname": "projects",
+   "fieldtype": "Data",
+   "label": "Project/s"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Type",
+   "options": "\nSecondary School Bursaries\nSkill Development Bursaries\nCommunity Project\nCommunity Grants\nCommunity Loans",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ward",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Ward",
+   "options": "Ward",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Application",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "response",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Response",
+   "options": "Pending\nAccepted\nRejected"
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Data",
+   "label": "Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tabletype",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Table Type"
+  },
+  {
+   "fetch_from": "ward.constituency",
+   "fieldname": "constituency",
+   "fieldtype": "Read Only",
+   "in_standard_filter": 1,
+   "label": "Constituency"
+  },
+  {
+   "fetch_from": "ward.district",
+   "fieldname": "district",
+   "fieldtype": "Read Only",
+   "in_standard_filter": 1,
+   "label": "District"
+  },
+  {
+   "fetch_from": "ward.province",
+   "fieldname": "province",
+   "fieldtype": "Read Only",
+   "in_standard_filter": 1,
+   "label": "Province"
+  },
+  {
+   "fieldname": "section_break_aledz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_irbzm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_pfi7b",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "ward.ward_name",
+   "fieldname": "ward_name",
+   "fieldtype": "Read Only",
+   "hidden": 1,
+   "label": "Ward Name"
+  },
+  {
+   "fieldname": "assignment",
+   "fieldtype": "Link",
+   "label": "Assignment",
+   "options": "Assignment"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-02-24 00:11:14.496237",
+ "modified_by": "Administrator",
+ "module": "Cdf Management",
+ "name": "Application",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CDF Data Clerk",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Constituency Development Fund Committee",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Provincial Local Government Officers",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

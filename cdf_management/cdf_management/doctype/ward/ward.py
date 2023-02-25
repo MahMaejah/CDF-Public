@@ -9,89 +9,90 @@ from frappe.model.document import Document
 class Ward(Document):
 
 	#Todo convert data in ward.js to python
-	def add_total(self, child_table, total):
-		table = child_table
-		if table:
-			arr = []
-			for k in table:
-				if str(k.response) == "Accepted":
-					arr.append(k.amount)
-			initial_value = 0
-			_sum = 0
-			_sum = sum(arr, initial_value)
+	# def add_total(self, child_table, total):
+	# 	table = child_table
+	# 	if table:
+	# 		arr = []
+	# 		for k in table:
+	# 			if str(k.response) == "Accepted":
+	# 				arr.append(k.amount)
+	# 		initial_value = 0
+	# 		_sum = 0
+	# 		_sum = sum(arr, initial_value)
 			
 			# self.set_value(total, 'ZMW ' + _sum)
 
 			# set_value('Ward', self.name, total, 'ZMW ' + str(_sum))
 			# frappe.msgprint(str())
 			# self.set_value(total, 'ZMW ' + str(_sum))
-			setattr(self, total, 'ZMW ' + str(_sum))
+	# 		setattr(self, total, 'ZMW ' + str(_sum))
 
 	
-	def add_group_type(self, group_type, field_name):
-		table1 = self.grants
-		table2 = self.loans
-		if table1 and table2:
-			child_table = table1 + table2
-			arr = []
-			arr1 = []
-			for k in child_table:
-				arr.append(k.group_type)
-				arr1.append(k.response)
+	# def add_group_type(self, group_type, field_name):
+	# 	table1 = self.grants
+	# 	table2 = self.loans
+	# 	if table1 and table2:
+	# 		child_table = table1 + table2
+	# 		arr = []
+	# 		arr1 = []
+	# 		for k in child_table:
+	# 			arr.append(k.group_type)
+	# 			arr1.append(k.response)
 
-			total_number_projects = len(arr)
-			self.total_number_of_project_submitted = total_number_projects
-			# self.set_value("total_number_of_project_submitted", total_number_projects)
-			count0 = arr1.count("Accepted")
-			self.total_number_of_projects_approved = count0
-			# self.set_value("total_number_of_projects_approved", count0)
-			count = arr.count(group_type)
-			# match field_name:
-			# 	case "total_number_of_cooperative":
-			setattr(self, field_name, count)
-			# self.set_value(field_name, count)
+	# 		total_number_projects = len(arr)
+	# 		self.total_number_of_project_submitted = total_number_projects
+	# 		# self.set_value("total_number_of_project_submitted", total_number_projects)
+	# 		count0 = arr1.count("Accepted")
+	# 		self.total_number_of_projects_approved = count0
+	# 		# self.set_value("total_number_of_projects_approved", count0)
+	# 		count = arr.count(group_type)
+	# 		# match field_name:
+	# 		# 	case "total_number_of_cooperative":
+	# 		setattr(self, field_name, count)
+	# 		# self.set_value(field_name, count)
 	
-	def validate(self):
+	# def validate(self):
 		
-		frappe.msgprint("Valitaded")
-		self.add_total(self.secondary_school, 'secondary_school_total_amount_disbursed')
-		self.add_total(self.skills_development, 'skills_development_total_amount_disbursed')
-		self.add_total(self.community_projects, 'community_projects_total_amount_disbursed')
-		self.add_total(self.grants, 'grants_total_amount_disbursed')
-		self.add_total(self.loans, 'loans_total_amount_disbursed')
+	# 	frappe.msgprint("Valitaded")
+	# 	self.add_total(self.secondary_school, 'secondary_school_total_amount_disbursed')
+	# 	self.add_total(self.skills_development, 'skills_development_total_amount_disbursed')
+	# 	self.add_total(self.community_projects, 'community_projects_total_amount_disbursed')
+	# 	self.add_total(self.grants, 'grants_total_amount_disbursed')
+	# 	self.add_total(self.loans, 'loans_total_amount_disbursed')
 
-		self.add_group_type("Cooperative","total_number_of_cooperative")
-		self.add_group_type("Youth Group","total_number_of_youth_groups")
-		self.add_group_type("Women Group","total_number_of_women_groups")
-		self.add_group_type("Community Club","total_number_of_community_clubs")
-		self.add_group_type("Community Club","total_number_of_community_projects")
-		self.add_group_type("Company","total_number_of_companies")
-		self.add_group_type("Business","total_number_of_businesses")
+	# 	self.add_group_type("Cooperative","total_number_of_cooperative")
+	# 	self.add_group_type("Youth Group","total_number_of_youth_groups")
+	# 	self.add_group_type("Women Group","total_number_of_women_groups")
+	# 	self.add_group_type("Community Club","total_number_of_community_clubs")
+	# 	self.add_group_type("Community Club","total_number_of_community_projects")
+	# 	self.add_group_type("Company","total_number_of_companies")
+	# 	self.add_group_type("Business","total_number_of_businesses")
 
-		total_amount_disbursed = [
-			self.secondary_school_total_amount_disbursed,
-			self.skills_development_total_amount_disbursed,
-			self.community_projects_total_amount_disbursed,
-			self.grants_total_amount_disbursed,
-			self.loans_total_amount_disbursed
-		]
+	# 	total_amount_disbursed = [
+	# 		self.secondary_school_total_amount_disbursed,
+	# 		self.skills_development_total_amount_disbursed,
+	# 		self.community_projects_total_amount_disbursed,
+	# 		self.grants_total_amount_disbursed,
+	# 		self.loans_total_amount_disbursed
+	# 	]
 		# print(total_amount_disbursed)
-		if None not in total_amount_disbursed:
-			sum_total = []
-			for amt in total_amount_disbursed:
-				clean_amt = re.search(r"\d+", amt)
-				sum_total.append(int(clean_amt.group()))
+		# if None not in total_amount_disbursed:
+		# 	sum_total = []
+		# 	for amt in total_amount_disbursed:
+		# 		clean_amt = re.search(r"\d+", amt)
+		# 		sum_total.append(int(clean_amt.group()))
 			# frappe.msgprint(str(sum_total))
-			initial_value = 0
-			_sum = 0
-			_sum = sum(sum_total)
-			self.total_amount_disbursed = 'ZMW ' + str(_sum)
+			# initial_value = 0
+			# _sum = 0
+			# _sum = sum(sum_total)
+			# self.total_amount_disbursed = 'ZMW ' + str(_sum)
 			# frappe.db.set_value('Ward', self.name,"total_amount_disbursed", 'ZMW ' + str(_sum))
 
 
 
 	def on_update(self):
-		self.calculate_total()
+		pass
+		#self.calculate_total()
 
 	def calculate_total(self):
 		self.wards_in_constituency_total_secondary_school_amount_disbursed()
