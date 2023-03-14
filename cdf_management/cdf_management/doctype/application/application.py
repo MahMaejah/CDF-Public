@@ -6,12 +6,50 @@ from frappe.model.document import Document
 from frappe import _
 
 class Application(Document):
+	def before_save(self):
+		res = self.is_assigned()
+
+		if not res:
+			frappe.throw("You do not have permission to edit this document")
+	
 	def on_update(self):
+		# res = self.is_assigned()
+		# frappe.msgprint(f"Is assigend {res}")
+		# if not res:
+		# 	frappe.msgprint("You do not have permission to edit this document")
+		# 	return
 		self.auto_fill_ward_data()
-		# self.const_financial_sum()
 		self.auto_fill_data("constituency",self.constituency,"Constituency Entry")
 		self.auto_fill_data("district",self.district,"District")
 		self.auto_fill_data("province",self.province,"Province Entry")
+		self.calculate_constituency_financial_summary()
+	
+	def is_assigned(self):
+		user = frappe.session.user
+		if user == "Administrator":
+			
+			return True
+		frappe.msgprint(user)
+		assignments = frappe.db.get_list("Assignment", filters={'user': str(user)})
+		is_level_above = False
+		levels = {
+			"Ward": 0, "Constituency": 1, "District": 2, "Province": 3
+		}
+		frappe.msgprint(str(assignments))
+		for ass in assignments:
+			ass1 = frappe.get_doc("Assignment", ass)
+			if ass1.level != "Ward":
+				# frappe.msgprint(ass.constituency)
+				if ass1.constituency == self.constituency or ass1.province == self.province or ass1.province == self.province:
+					is_level_above = True
+					break
+		if is_level_above:
+			# frappe.msgprint("Is assigned larger applications")
+			return True
+		assignments = frappe.db.get_list("Assignment", filters={'user':user, 'application':str(self)})
+		return len(assignments) > 0
+
+	
 	def validate(self):
 		# frappe.msgprint("Running!")
 		if self.type == "Secondary School Bursaries" or self.type == "Skill Development Bursaries":
@@ -52,19 +90,19 @@ class Application(Document):
 				if len(ward_child_table) != 0:
 					for entry in ward_child_table:
 						if loop_count > og_length:
-							frappe.msgprint("Exceeded list")
+							# frappe.msgprint("Exceeded list")
 							break
 						loop_count += 1
 						if str(entry.linked_application) == str(application.name):
 							found_match = True
-							frappe.msgprint("entry exits")
+							# frappe.msgprint("entry exits")
 							break
 					if not found_match:
-						frappe.msgprint("entry does not exist")
+						# frappe.msgprint("entry does not exist")
 						row = parent_ward.append("secondary_school", child_table_data)
 						row.insert()
 				else:
-					frappe.msgprint("Child_tb is empty")
+					# frappe.msgprint("Child_tb is empty")
 					row = parent_ward.append("secondary_school", child_table_data)
 					row.insert()
 					
@@ -86,19 +124,19 @@ class Application(Document):
 				if len(ward_child_table) != 0:
 					for entry in ward_child_table:
 						if loop_count > og_length:
-							frappe.msgprint("Exceeded list")
+							# frappe.msgprint("Exceeded list")
 							break
 						loop_count += 1
 						if str(entry.linked_application) == str(application.name):
 							found_match = True
-							frappe.msgprint("entry exits")
+							# frappe.msgprint("entry exits")
 							break
 					if not found_match:
-						frappe.msgprint("entry does not exist")
+						# frappe.msgprint("entry does not exist")
 						row = parent_ward.append("skills_development", child_table_data)
 						row.insert()
 				else:
-					frappe.msgprint("Child_tb is empty")
+					# frappe.msgprint("Child_tb is empty")
 					row = parent_ward.append("skills_development", child_table_data)
 					row.insert()
 			
@@ -119,19 +157,19 @@ class Application(Document):
 				if len(ward_child_table) != 0:
 					for entry in ward_child_table:
 						if loop_count > og_length:
-							frappe.msgprint("Exceeded list")
+							# frappe.msgprint("Exceeded list")
 							break
 						loop_count += 1
 						if str(entry.linked_application) == str(application.name):
 							found_match = True
-							frappe.msgprint("entry exits")
+							# frappe.msgprint("entry exits")
 							break
 					if not found_match:
-						frappe.msgprint("entry does not exist")
+						# frappe.msgprint("entry does not exist")
 						row = parent_ward.append("community_projects", child_table_data)
 						row.insert()
 				else:
-					frappe.msgprint("Child_tb is empty")
+					# frappe.msgprint("Child_tb is empty")
 					row = parent_ward.append("community_projects", child_table_data)
 					row.insert()
 				
@@ -159,19 +197,19 @@ class Application(Document):
 				if len(ward_child_table) != 0:
 					for entry in ward_child_table:
 						if loop_count > og_length:
-							frappe.msgprint("Exceeded list")
+							# frappe.msgprint("Exceeded list")
 							break
 						loop_count += 1
 						if str(entry.linked_application) == str(application.name):
 							found_match = True
-							frappe.msgprint("entry exits")
+							# frappe.msgprint("entry exits")
 							break
 					if not found_match:
-						frappe.msgprint("entry does not exist")
+						# frappe.msgprint("entry does not exist")
 						row = parent_ward.append(child_table_field, child_table_data)
 						row.insert()
 				else:
-					frappe.msgprint("Child_tb is empty")
+					# frappe.msgprint("Child_tb is empty")
 					row = parent_ward.append(child_table_field, child_table_data)
 					row.insert()
 					
@@ -231,19 +269,19 @@ class Application(Document):
 				if len(ward_child_table) != 0:
 					for entry in ward_child_table:
 						if loop_count > og_length:
-							frappe.msgprint("Exceeded list")
+							# frappe.msgprint("Exceeded list")
 							break
 						loop_count += 1
 						if str(entry.linked_application) == str(application.name):
 							found_match = True
-							frappe.msgprint("entry exits")
+							# frappe.msgprint("entry exits")
 							break
 					if not found_match:
-						frappe.msgprint("entry does not exist")
+						# frappe.msgprint("entry does not exist")
 						row = parent_level.append("secondary_school", child_table_data)
 						row.insert()
 				else:
-					frappe.msgprint("Child_tb is empty")
+					# frappe.msgprint("Child_tb is empty")
 					row = parent_level.append("secondary_school", child_table_data)
 					row.insert()
 					
@@ -266,19 +304,19 @@ class Application(Document):
 				if len(ward_child_table) != 0:
 					for entry in ward_child_table:
 						if loop_count > og_length:
-							frappe.msgprint("Exceeded list")
+							# frappe.msgprint("Exceeded list")
 							break
 						loop_count += 1
 						if str(entry.linked_application) == str(application.name):
 							found_match = True
-							frappe.msgprint("entry exits")
+							# frappe.msgprint("entry exits")
 							break
 					if not found_match:
-						frappe.msgprint("entry does not exist")
+						# frappe.msgprint("entry does not exist")
 						row = parent_level.append("skills_development", child_table_data)
 						row.insert()
 				else:
-					frappe.msgprint("Child_tb is empty")
+					# frappe.msgprint("Child_tb is empty")
 					row = parent_level.append("skills_development", child_table_data)
 					row.insert()
 			elif application.type == "Community Project":
@@ -298,19 +336,19 @@ class Application(Document):
 				if len(ward_child_table) != 0:
 					for entry in ward_child_table:
 						if loop_count > og_length:
-							frappe.msgprint("Exceeded list")
+							# frappe.msgprint("Exceeded list")
 							break
 						loop_count += 1
 						if str(entry.linked_application) == str(application.name):
 							found_match = True
-							frappe.msgprint("entry exits")
+							# frappe.msgprint("entry exits")
 							break
 					if not found_match:
-						frappe.msgprint("entry does not exist")
+						# frappe.msgprint("entry does not exist")
 						row = parent_level.append("community_projects", child_table_data)
 						row.insert()
 				else:
-					frappe.msgprint("Child_tb is empty")
+					# frappe.msgprint("Child_tb is empty")
 					row = parent_level.append("community_projects", child_table_data)
 					row.insert()
 			else:
@@ -338,19 +376,19 @@ class Application(Document):
 				if len(ward_child_table) != 0:
 					for entry in ward_child_table:
 						if loop_count > og_length:
-							frappe.msgprint("Exceeded list")
+							# frappe.msgprint("Exceeded list")
 							break
 						loop_count += 1
 						if str(entry.linked_application) == str(application.name):
 							found_match = True
-							frappe.msgprint("entry exits")
+							# frappe.msgprint("entry exits")
 							break
 					if not found_match:
-						frappe.msgprint("entry does not exist")
+						# frappe.msgprint("entry does not exist")
 						row = parent_level.append(child_table_field, child_table_data)
 						row.insert()
 				else:
-					frappe.msgprint("Child_tb is empty")
+					# frappe.msgprint("Child_tb is empty")
 					row = parent_level.append(child_table_field, child_table_data)
 					row.insert()
 					
@@ -359,6 +397,7 @@ class Application(Document):
 		parent_level.total_number_of_businesses = float(frappe.db.count('Application', {'docstatus': 1, level: level_name, 'group_type':'Business'}))
 		parent_level.total_number_of_companies = float(frappe.db.count('Application', {'docstatus': 1, level: level_name, 'group_type':'Company'}))
 		parent_level.total_number_of_youth_groups = float(frappe.db.count('Application', {'docstatus': 1, level: level_name, 'group_type':'Youth Group'})) 
+		frappe.errprint(frappe.db.count('Application', {'docstatus': 1, level: level_name, 'group_type':'Youth Group'}))
 		parent_level.total_number_of_community_clubs = float(frappe.db.count('Application', {'docstatus': 1, level: level_name, 'group_type':'Community Club'}))
 		
 		parent_level.total_male_bursaries_benficiaries = float(frappe.db.count('Application', {'docstatus': 1, level: level_name,'sex':'Male', 'type':'Secondary School Bursaries'}))
@@ -375,14 +414,26 @@ class Application(Document):
 		parent_level.community_projects_total_amount_disbursed = f"ZMW  {communtiy_projects_total:,}"
 		parent_level.loans_total_amount_disbursed = f"ZMW  {loans_total:,}"
 		parent_level.grants_total_amount_disbursed = f"ZMW  {grants_total:,}"
-		parent_level.total_amount_disbursed = f"ZM  {level_grand_total:,}"
+		parent_level.total_amount_disbursed = f"ZMW  {level_grand_total:,}"
 
 		parent_level.save()
 
-	def const_financial_sum(self):
-		amount_allocated_to_constituency = float(frappe.db.get_single_value('Allocation Settings', 'total_amount_allocated_per_constituency').replace("ZMW"," "))
-		frappe.msgprint(_("Amount allocated to {0} is {1}").format(self.constituency,amount_allocated_to_constituency))
-		total_amount_disbursed_in_constituency = frappe.db.get_value('Constituency Entry', self.constituency, 'total_amount_disbursed')
+	def calculate_constituency_financial_summary(self):
+		constituency = frappe.get_doc('Constituency Entry', self.constituency)
+		amount_allocated_to_constituency = frappe.db.get_single_value('Allocation Settings', 'total_amount_allocated_per_constituency').replace('ZMW','')
+		# frappe.msgprint(_("Amount Allocated to {0} Constituency is {1}").format(self.constituency,amount_allocated_to_constituency))
+		amount_used_in_constituency = constituency.total_amount_disbursed
+		# total_amount_unused
+		int_clean_allocated_amount = float(amount_allocated_to_constituency.replace(',',''))
+		string_amount_used_in_constituency = amount_used_in_constituency.replace('ZMW','')
+		clean_amount_used_in_constituency = float(string_amount_used_in_constituency.replace(',',''))
+		amount_unsued = int_clean_allocated_amount - clean_amount_used_in_constituency
+		constituency.total_amount_allocated_to_constituency = amount_allocated_to_constituency
+		constituency.total_amount_unused = f"ZMW {amount_unsued:,}"
+		constituency.save()
+		
 @frappe.whitelist()
 def testing_api_calls(doc):             
 	return(doc)
+
+	

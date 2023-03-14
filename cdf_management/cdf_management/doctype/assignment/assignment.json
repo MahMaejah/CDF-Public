@@ -9,7 +9,11 @@
  "field_order": [
   "level",
   "application",
-  "user"
+  "user",
+  "province",
+  "district",
+  "constituency",
+  "ward"
  ],
  "fields": [
   {
@@ -29,11 +33,35 @@
    "fieldtype": "Link",
    "label": "User",
    "options": "User"
+  },
+  {
+   "fieldname": "province",
+   "fieldtype": "Link",
+   "label": "Province",
+   "options": "Province Entry"
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Link",
+   "label": "District",
+   "options": "District"
+  },
+  {
+   "fieldname": "constituency",
+   "fieldtype": "Link",
+   "label": "Constituency",
+   "options": "Constituency Entry"
+  },
+  {
+   "fieldname": "ward",
+   "fieldtype": "Link",
+   "label": "Ward",
+   "options": "Ward"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-02-19 14:01:41.679902",
+ "modified": "2023-02-28 16:56:30.046011",
  "modified_by": "Administrator",
  "module": "Cdf Management",
  "name": "Assignment",

@@ -49,7 +49,8 @@
   "total_number_of_projects_approved",
   "summary_of_financial_report_section",
   "total_amount_disbursed",
-  "column_break_35"
+  "column_break_35",
+  "charts"
  ],
  "fields": [
   {
@@ -73,16 +74,6 @@
   {
    "fieldname": "column_break_4",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "province",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_preview": 1,
-   "in_standard_filter": 1,
-   "label": "Province",
-   "options": "Province Entry",
-   "reqd": 1
   },
   {
    "fieldname": "district",
@@ -295,11 +286,27 @@
   {
    "fieldname": "column_break_6yvij",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "province",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Province",
+   "options": "Province Entry",
+   "reqd": 1
+  },
+  {
+   "fieldname": "charts",
+   "fieldtype": "HTML",
+   "label": "Charts",
+   "options": "<div id=\"frost-chart\"><div></div></div>"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-02-25 21:47:38.680679",
+ "modified": "2023-03-14 14:07:36.924100",
  "modified_by": "Administrator",
  "module": "Cdf Management",
  "name": "Ward",

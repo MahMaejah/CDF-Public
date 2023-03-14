@@ -14,6 +14,9 @@ class AllocationSettings(Document):
 			amount_allocated_to_whole_country = self.total_amount_allocated_for_community_development_country_wide
 			amount_alloacated_to_each_constituency = round(amount_allocated_to_whole_country/156)
 			self.total_amount_allocated_per_constituency = f"ZMW {amount_alloacated_to_each_constituency:,}"
+			frappe.msgprint(str(self.amount_alloacated_to_each_constituency))
 		except:
 			frappe.msgprint("Something went wrong in allocation settings")
 		# self.total_amount_allocated_for_community_development_country_wide = f"ZMW {amount_allocated_to_whole_country:,}"
+		
+		

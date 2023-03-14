@@ -4,13 +4,20 @@
 # import frappe
 from frappe.model.document import Document
 import frappe
-import datetime
-import re
+from frappe import _
 from frappe.model.document import Document
 from frappe.utils import now
 
 class ConstituencyEntry(Document):
 	pass
+	# def on_update(self):
+	# 	self.calculate_financial_summary()
+	# def calculate_financial_summary(self):
+	# 	total_amount_allocated = frappe.db.get_single_value('Allocation Settings', 'total_amount_allocated_per_constituency')
+	# 	total_amount_disbursed = self.total_amount_disbursed
+	# 	# total_amount_unused
+	# 	setattr(self,'total_amount_allocated_to_constituency',total_amount_allocated)
+	# 	frappe.msgprint(_("Amount Allocated to {0} is {1}").format(self.name,total_amount_allocated))
 	# def before_save(self):
 	# 	self.sync_corresponding_application()
   

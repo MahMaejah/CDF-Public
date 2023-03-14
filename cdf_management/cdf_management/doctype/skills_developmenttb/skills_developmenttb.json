@@ -11,8 +11,8 @@
   "age",
   "contact_number",
   "training_institution",
-  "response",
-  "amount"
+  "amount",
+  "linked_application"
  ],
  "fields": [
   {
@@ -62,19 +62,16 @@
    "label": "Contact number"
   },
   {
-   "allow_in_quick_entry": 1,
-   "fieldname": "response",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "in_preview": 1,
-   "label": "Response",
-   "options": "Pending\nAccepted\nRejected"
+   "fieldname": "linked_application",
+   "fieldtype": "Link",
+   "label": "Linked Application",
+   "options": "Application"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2022-12-24 15:16:52.564115",
+ "modified": "2023-02-27 12:37:51.016906",
  "modified_by": "Administrator",
  "module": "Cdf Management",
  "name": "Skills DevelopmentTB",

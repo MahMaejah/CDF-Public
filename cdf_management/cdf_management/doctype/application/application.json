@@ -193,13 +193,6 @@
    "label": "District"
   },
   {
-   "fetch_from": "ward.province",
-   "fieldname": "province",
-   "fieldtype": "Read Only",
-   "in_standard_filter": 1,
-   "label": "Province"
-  },
-  {
    "fieldname": "section_break_aledz",
    "fieldtype": "Section Break"
   },
@@ -221,14 +214,23 @@
   {
    "fieldname": "assignment",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Assignment",
    "options": "Assignment"
+  },
+  {
+   "default": "Cop",
+   "fetch_from": "ward.province",
+   "fieldname": "province",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Province"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2023-02-24 00:11:14.496237",
+ "modified": "2023-02-28 16:26:11.957342",
  "modified_by": "Administrator",
  "module": "Cdf Management",
  "name": "Application",
