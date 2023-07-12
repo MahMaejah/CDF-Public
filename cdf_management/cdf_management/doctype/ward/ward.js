@@ -1,6 +1,6 @@
 // Copyright (c) 2022, Alphazen Technoliginologies and contributors
 // For license information, please see license.txt
-import { Chart } from "frappe-charts"
+// import { Chart } from "frappe-charts"
 
 frappe.ui.form.on('Ward', {
   // refresh:function(){

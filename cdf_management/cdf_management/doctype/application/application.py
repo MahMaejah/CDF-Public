@@ -432,8 +432,8 @@ class Application(Document):
 		constituency.total_amount_unused = f"ZMW {amount_unsued:,}"
 		constituency.save()
 		
-@frappe.whitelist()
-def testing_api_calls(doc):             
-	return(doc)
+# @frappe.whitelist()
+# def testing_api_calls(doc):             
+# 	return(doc)
 
 	
